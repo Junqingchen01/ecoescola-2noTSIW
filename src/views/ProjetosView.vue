@@ -2,7 +2,7 @@
     <div class="projeto">
         <h1>Projeto</h1>
     </div>
-    rfdasfadsfsa
+    520
 </template>
 
 <script>
