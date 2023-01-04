@@ -2,7 +2,6 @@
     <div class="projeto">
         <h1>Projeto</h1>
     </div>
-    wpsjhdsaf
 </template>
 
 <script>
