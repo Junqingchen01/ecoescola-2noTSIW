@@ -28,7 +28,7 @@
 
                     <v-card-text class="text-center">
                             <v-btn 
-                            color="secondary"
+                            color="secondary" @click="$router.push({ name: 'perfileditar' })"
                             >
                             Editar 
                             </v-btn>

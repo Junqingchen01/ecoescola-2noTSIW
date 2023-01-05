@@ -1,7 +1,7 @@
 <template>
   <VApp>
     <Sitebar />
-    <VMain style="background-color: #11999E;">
+    <VMain style="background-color: #11999E;"> 
       <RouterView ></RouterView>
     </VMain>
   </VApp>

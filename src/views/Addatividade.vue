@@ -88,7 +88,7 @@
       addatividade(){
 
         alert('Novo atividade ja adicionou!')
-        this.$router.push({ name:'home'})
+        this.$router.push({ name:'table'})
 
 
         // const atividades = JSON.parse(localStorage.getItem('atividades'));
