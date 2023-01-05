@@ -4,7 +4,9 @@ import TableView from '../views/TableView.vue'
 import ProjetosView from '../views/ProjetosView.vue'
 import PerfilView from '../views/PerfilView.vue'
 import CalendarioView from '../views/CalendarioView.vue'
-import Addatividade from '../views/Addatividade.vue';
+import Addatividade from '../views/Addatividade.vue'
+import PerfilEditar from '../views/PerfilEditar.vue';
+
 
 const routes = [
   {
@@ -31,6 +33,11 @@ const routes = [
     path:'/addatividade',
     name:'addatividade',
     component:Addatividade
+  },
+  {
+    path:'/perfileditar',
+    name:'perfileditar',
+    component:PerfilEditar
   },
 ]
 

@@ -1,29 +1,37 @@
 <template>
-  <div class="text-center section">
-    <vc-calendar
-      class="custom-calendar max-w-full"
-      :masks="masks"
-      :attributes="attributes"
-      disable-page-swipe
-      is-expanded
-    >
-      <template v-slot:day-content="{ day, attributes }">
-        <div class="flex flex-col h-full z-10 overflow-hidden">
-          <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
-          <div class="flex-grow overflow-y-auto overflow-x-auto">
-            <p
-              v-for="attr in attributes"
-              :key="attr.key"
-              class="text-xs leading-tight rounded-sm p-1 mt-0 mb-1"
-              :class="attr.customData.class"
-            >
-              {{ attr.customData.title }}
-            </p>
-          </div>
+  <v-container class="py-8 px-10">
+    <v-row>
+      <v-col cols="13">
+        <h1 class="text-left">Calendario</h1>
+        
+        <div class="text-center section">
+          <vc-calendar
+            class="custom-calendar max-w-full"
+            :masks="masks"
+            :attributes="attributes"
+            disable-page-swipe
+            is-expanded
+          >
+            <template v-slot:day-content="{ day, attributes }">
+              <div class="flex flex-col h-full z-10 overflow-hidden">
+                <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
+                <div class="flex-grow overflow-y-auto overflow-x-auto">
+                  <p
+                    v-for="attr in attributes"
+                    :key="attr.key"
+                    class="text-xs leading-tight rounded-sm p-1 mt-0 mb-1"
+                    :class="attr.customData.class"
+                  >
+                    {{ attr.customData.title }}
+                  </p>
+                </div>
+              </div>
+            </template>
+          </vc-calendar>
         </div>
-      </template>
-    </vc-calendar>
-  </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 

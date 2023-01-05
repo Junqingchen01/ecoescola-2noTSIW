@@ -15,33 +15,6 @@
                   
                 ></v-text-field>
               </v-col>
-             <!-- <small>Coordenador</small> 
-
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Nome*"
-                  required
-                ></v-text-field>
-              </v-col>
-              
-              
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Apelido*"
-                  
-                  persistent-hint
-                  required
-                ></v-text-field>
-              </v-col> -->
-
               <v-col cols="12">
                 <v-text-field
                   label="Descrição do Atividade*"

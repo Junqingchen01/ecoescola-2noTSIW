@@ -1,10 +1,10 @@
 <template>
      <v-container class="py-8 px-10"
          >
-          <v-row>
-            <v-col
-            cols="4">
-            <h1  class="text-left">Perfil</h1>
+          <v-row no-gutters>
+            <v-col 
+            >
+            <h1  class="text-left">Perfil</h1>  
             <v-card
                     class="text-left"
                     max-width="350"
@@ -35,73 +35,80 @@
                     <v-spacer></v-spacer>
                     </v-card-text>
                 </v-card>
-                
             </v-col>
-            <v-col
-            cols="2.5">
-                <v-card
-                        class="text-left"
-                        max-width="300"
+            <!-- MAIN -->
+            <v-col cols="4" sm="5">
+                    <v-card
+                        class="ma-3 pa-2"
+                        width="400"
+                        height="250"
                     >
                         <v-card-title class="text-center">
                             Atividade área
                         </v-card-title>
-
-                        <v-card-subtitle class="text-center">
-                            Contacto:
-                        </v-card-subtitle>
-                        <v-card-subtitle class="text-center">
-                            E-mail:
+                            <v-card-subtitle class="text-center text-h5">
+                                 ESMAD
+                            </v-card-subtitle>
+                        <v-card-subtitle class="text-center">                          
                         </v-card-subtitle>
                         <v-card-text class="text-center">
-                
-                            
                         </v-card-text>
                     </v-card>
-                    
-            </v-col>
-            <v-col
-            cols="2.5">
-                <v-card
-                        class="text-left"
-                        max-width="300"
+                    <v-card
+                        class="ma-3 pa-2"
+                        width="600"
+                        height="150"
                     >
                         <v-card-title class="text-center">
-                            Nº atividades concluidos
-                            
+                            Atividade área
                         </v-card-title>
-
-                        <v-card-subtitle class="text-center">
-                            Contacto:
+                            <v-card-subtitle class="text-center text-h5">
+                                 ESMAD
+                            </v-card-subtitle>
+                        <v-card-subtitle class="text-center">                          
                         </v-card-subtitle>
-                        <v-card-subtitle class="text-center">
-                            E-mail:
-                        </v-card-subtitle>
+                        <v-card-text class="text-center">
+                        </v-card-text>
                     </v-card>
+                </v-col>
                     
-            </v-col>
-            <v-col
-            cols="2.5">
-                <v-card
-                        class="text-left"
-                        max-width="300"
+                <v-col cols="4" sm="4">
+                    <v-card
+                        class="ma-3 pa-2"
+                        width="400"
+                        height="250"
                     >
                         <v-card-title class="text-center">
-                            Pontos ja ganhos
+                            Atividade área
                         </v-card-title>
-
-                        <v-card-subtitle class="text-center">
-                            Contacto:
+                            <v-card-subtitle class="text-center text-h5">
+                                 ESMAD
+                            </v-card-subtitle>
+                        <v-card-subtitle class="text-center">                          
                         </v-card-subtitle>
-                        <v-card-subtitle class="text-center">
-                            E-mail:
+                        <v-card-text class="text-center">
+                        </v-card-text>
+                    </v-card> 
+                    <v-card
+                        class="ma-3 pa-2"
+                        width="100"
+                        height="150"
+                    >
+                        <v-card-title class="text-center">
+                            Atividade área
+                        </v-card-title>
+                            <v-card-subtitle class="text-center text-h5">
+                                 ESMAD
+                            </v-card-subtitle>
+                        <v-card-subtitle class="text-center">                          
                         </v-card-subtitle>
-                    </v-card>
-                    
-            </v-col>
+                        <v-card-text class="text-center">
+                        </v-card-text>
+                    </v-card>           
+                </v-col>
+                
           </v-row>
         </v-container>
-
 </template>
 
 <script>
