@@ -4,7 +4,6 @@ export const useCounterStore = defineStore('atividade', {
   state: () =>({
     atividades:[
       {
-        fotos:[],
         nomeAtividade:"",
         diagonostico:"",
         objetivo:"",

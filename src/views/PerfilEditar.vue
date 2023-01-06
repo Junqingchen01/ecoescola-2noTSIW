@@ -16,13 +16,6 @@
                     James
                     </v-card-title>
 
-                    <v-card-subtitle class="text-center">
-                        Contacto:
-                    </v-card-subtitle>
-                    <v-card-subtitle class="text-center">
-                        E-mail:
-                    </v-card-subtitle>
-
                     <v-card-text class="text-center">
                             <v-btn 
                             color="secondary" @click="$router.push({ name: 'perfileditar' })"

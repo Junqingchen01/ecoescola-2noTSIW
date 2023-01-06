@@ -1,31 +1,35 @@
-<template>
+<template >
 
         <v-container class="py-8 px-10"
          >
           <v-row>
-            <v-col cols="12" ms="3">
+            <v-col cols="12"   >
               <h1>Plano de Atividades </h1>
               <v-btn 
-                  class="mr-2 "
+                  class="mr-16"
+                  width="215"
                   @click="$router.push({ name: 'table' })"
                 >
                 Gestão de Projeto
               </v-btn>
               <v-btn 
-                  class="mr-2"
+                  class="mr-16"
                   color="black"
+                  width="215"
                   @click="$router.push({ name: 'table' })"
                 >
                   Plano de atividade
               </v-btn>
               <v-btn 
-                  class="mr-2"
+                  class="mr-16"
+                  width="215"
                   @click="$router.push({ name: 'table' })"
                 >
                 Dashboard 
               </v-btn>
               <v-btn 
-                  class="mr-2"
+                  class="mr-16"
+                  width="215"
                   @click="$router.push({ name: 'table' })"
                 >
                   Relatório 
@@ -47,7 +51,7 @@
                     Descrição
                   </th>
                   <th class="text-left">
-                    Objetivo
+                    Objetivos
                   </th>
                   <th class="text-left">
                     Diagonóstico
@@ -57,6 +61,12 @@
                   </th>
                   <th class="text-left">
                     Calendarização
+                  </th>
+                  <th class="text-left">
+                    Colaboradores
+                  </th>
+                  <th class="text-left">
+                    Status
                   </th>
                 
                 </tr>
@@ -73,6 +83,14 @@
                   <td>{{ item.diagnostico }}</td>
                   <td>{{ item.meta }}</td>
                   <td>{{ item.calendarizacao }}</td>
+                  <td>{{ item.colaboradore }}</td>
+                  <td>
+                    <!-- <v-select 
+                    :items="['Em progresso','Concluido']"
+                    required
+                  ></v-select> -->
+                  {{ item.status }}
+                  </td>
                   
                 </tr>
               </tbody>
@@ -85,7 +103,13 @@
                 >
                   Add Atividade
                 </v-btn>
-                
+                <v-btn 
+                  style="background-color: #6DECB9;"
+                  class="mr-2"
+                  @click="guardatable()"
+                >
+                  guarda editação
+                </v-btn>
               </div>
             </v-col>
           </v-row>
@@ -105,6 +129,8 @@
             objetivo:'fly',
             meta:'11',
             calendarizacao:'1',
+            colaboradore:'12',
+            status:'Em progresso',
             
           },
           {
@@ -114,6 +140,9 @@
             diagnostico: 237,
             objetivo:'flly',
             meta:'22',
+            calendarizacao:'1',
+            colaboradore:'12',
+            status:'Em progresso',
             
           },
           { 
@@ -126,16 +155,7 @@
             calendarizacao:'1',
             
           },
-          { 
-            atividade: 'apple plus pro max ',
-            nivel: 'A',
-            descricao:'asdhlkjasjhkdl',
-            diagnostico: 159,
-            objetivo:'fly',
-            meta:'11',
-            calendarizacao:'1',
-            
-          },
+         
           
         ],
       }
@@ -143,6 +163,14 @@
     created() {
 			if (!localStorage.getItem('atividades')) localStorage.setItem('atividades', JSON.stringify(this.atividades));
 		},
+    methods:{
+      guardatable(){
+
+        alert('O informação de ativodade ja a guarda!')
+       
+
+      }
+    }
     
   }
 </script>
