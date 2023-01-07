@@ -8,7 +8,7 @@
               <v-btn 
                   class="mr-16"
                   width="215"
-                  @click="$router.push({ name: 'table' })"
+                  @click="$router.push({ name: 'projetos' })"
                 >
                 Gestão de Projeto
               </v-btn>
@@ -23,14 +23,14 @@
               <v-btn 
                   class="mr-16"
                   width="215"
-                  @click="$router.push({ name: 'table' })"
+                  @click="$router.push({ name: 'dashboard' })"
                 >
                 Dashboard 
               </v-btn>
               <v-btn 
                   class="mr-16"
                   width="215"
-                  @click="$router.push({ name: 'table' })"
+                  @click="$router.push({ name: 'relatorio' })"
                 >
                   Relatório 
               </v-btn>
@@ -103,13 +103,7 @@
                 >
                   Add Atividade
                 </v-btn>
-                <v-btn 
-                  style="background-color: #6DECB9;"
-                  class="mr-2"
-                  @click="guardatable()"
-                >
-                  guarda editação
-                </v-btn>
+
               </div>
             </v-col>
           </v-row>
@@ -164,12 +158,7 @@
 			if (!localStorage.getItem('atividades')) localStorage.setItem('atividades', JSON.stringify(this.atividades));
 		},
     methods:{
-      guardatable(){
-
-        alert('O informação de ativodade ja a guarda!')
-       
-
-      }
+  
     }
     
   }

@@ -18,9 +18,9 @@
 
                     <v-card-text class="text-center">
                             <v-btn 
-                            color="secondary" @click="$router.push({ name: 'perfileditar' })"
+                            color="secondary" @click=""
                             >
-                            Editar 
+                            Carregar Nova Foto
                             </v-btn>
                     <v-spacer></v-spacer>
                     </v-card-text>
@@ -28,7 +28,6 @@
             </v-col>
             <v-col>
                 <v-card
-                    class="text-left"
                     width="700"
                     height="650"
                 >

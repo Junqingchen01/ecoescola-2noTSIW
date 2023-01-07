@@ -4,11 +4,10 @@
      >
       <v-row>
         <v-col cols="12"   >
-          <h1>Gestão de Projeto Eco-Escolas ESMAD </h1>
+          <h1>Dashboard </h1>
           <v-btn 
               class="mr-16"
               width="215"
-              color="black"
               @click="$router.push({ name: 'projetos' })"
             >
             Gestão de Projeto
@@ -23,6 +22,7 @@
           <v-btn 
               class="mr-16"
               width="215"
+              color="black"
               @click="$router.push({ name: 'dashboard' })"
             >
             Dashboard 

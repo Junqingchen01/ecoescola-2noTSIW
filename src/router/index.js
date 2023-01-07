@@ -6,7 +6,8 @@ import PerfilView from '../views/PerfilView.vue'
 import CalendarioView from '../views/CalendarioView.vue'
 import Addatividade from '../views/Addatividade.vue'
 import PerfilEditar from '../views/PerfilEditar.vue';
-
+import DashboardView from '@/views/DashboardView.vue'
+import RelatorioView from '@/views/RelatorioView.vue'
 
 const routes = [
   {
@@ -38,6 +39,16 @@ const routes = [
     path:'/perfileditar',
     name:'perfileditar',
     component:PerfilEditar
+  },
+  {
+    path:'/dashboard',
+    name:'dashboard',
+    component:DashboardView
+  },
+  {
+    path:'/relatorio',
+    name:'relatorio',
+    component:RelatorioView
   },
 ]
 
