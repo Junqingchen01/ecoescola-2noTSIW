@@ -1,7 +1,7 @@
 <template>
-     <v-container class="py-8 px-12"
+     <v-container class="py-8 px-10"
          >
-          <v-row no-gutters>
+          <v-row >
             
             <v-col  cols="3"
             >
@@ -37,68 +37,90 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <!-- MAIN -->
+<!-- MAIN -->
+<!-- Atividade area -->
             <v-col
-                cols="3" class="ma-2" 
+                cols="3" 
                 no-gutters>
                     <v-card
                          width="250"
-                         style="margin-top:40px;"
+                         height="100"
+                         style="margin-top:47px;"
                         >
                             <v-card-title class="text-center">
                                 Atividade área
                             </v-card-title>
+                            <v-spacer></v-spacer>
                                 <v-card-subtitle class="text-center text-h5">
                                     ESMAD
                                 </v-card-subtitle>
-                            <v-card-subtitle class="text-center">                          
-                            </v-card-subtitle>
-                            <v-card-text class="text-center">
-                            </v-card-text>
                         </v-card>
-                        
+ <!-- atividade em progresso -->
                         <v-card
-                            width="500"
-                            height=""
-                            style="margin:8px 0"
+                            width="536"
+                            height="220"
+                            style="margin:16px 0"
                         >
                             <v-card-title class="text-center">
-                                Nº atividades concluidos                   
+                                Atividades em progresso:                  
                             </v-card-title>
-                            <v-card-subtitle class="text-center">
-                                Numero
-                            </v-card-subtitle>
                             <v-card-text class="text-center">
-    
+                                Numero
                             </v-card-text>
+                            
+                            <v-card-title class="text-center">
+                                Ações e Atividades Previstas:                   
+                            </v-card-title>
+                            <v-card-text class="text-center">
+                                
+                            </v-card-text>
+                        </v-card>
+<!--Numero atividades concluidos por mes-->
+                        <v-card
+                            width="536"
+                            height="200"
+                            style="margin:16px 0"
+                        >
+                            <v-card-title class="text-center">
+                                Numero tarefa concluidos por mes:                  
+                            </v-card-title>
+                            <v-card-text>
+                                <v-row>
+                                    <v-col cols="3"></v-col>
+                                    <v-col cols="7">
+                                        <BarChart />
+                                    </v-col>
+                                </v-row>
+                            </v-card-text>
+
                         </v-card>
 
                 </v-col>
-                
-                <v-col  cols="3" class="ma-2" style="margin: 0 8px;"
-                >
+ <!-- Numero atividades concluidos-->
+                <v-col  cols="3" >
                     <v-card
                             max-width="250"
-                            style="margin-top: 40px;"
+                            height="100"
+                            style="margin-top: 47px;"
                         >
                             <v-card-title class="text-center">
-                                Nº atividades concluidos                   
+                                Nº atividade concluido                   
                             </v-card-title>
                             <v-card-subtitle class="text-center">
                                 Numero
                             </v-card-subtitle>
-                            <v-card-text class="text-center">
-    
-                            </v-card-text>
+                            
                         </v-card>
                         
                         
                 </v-col>
-                <v-col  cols="3" class="ma-2" style="margin: 0 8px;"
+<!-- pontos ja ganhos -->
+                <v-col  cols="3" 
                 >
                     <v-card
                             max-width="250"
-                            style="margin-top: 40px;"
+                            height="100"
+                            style="margin-top: 47px;"
                         >
                             <v-card-title class="text-center">
                                 Pontos ja ganhos
@@ -107,20 +129,51 @@
                             <v-card-subtitle class="text-center">
                                 Pontos
                             </v-card-subtitle>
-                            <v-card-subtitle class="text-center">                     
-                            </v-card-subtitle>
+
+                    </v-card>
+<!-- metas -->
+                    <v-card
+                            max-width="250"
+                            height="220"
+                            style="margin:16px 0"
+                            
+                        >
+                            <v-card-title class="text-center">
+                                Metas:                  
+                            </v-card-title>
                             <v-card-text class="text-center">
+                                Metass
                             </v-card-text>
-                        </v-card>
-                    </v-col>
+                    
+                    </v-card>
+<!--Progresso total do projeto-->
+                    <v-card
+                            max-width="250"
+                            height="200"
+                            style="margin:16px 0"
+                        >
+                            <v-card-title class="text-center">
+                                Progresso total
+                                             
+                            </v-card-title>
+                            <v-card-text>
+                                
+                            </v-card-text>
+                    
+                    </v-card>
+                    
+                </v-col>
  
           </v-row>
     </v-container>
 </template>
 
 <script>
+import BarChart from '../components/BarChart.vue'
+
     export default {
-        
+        name: 'App',
+         components: { BarChart, }
     }
 </script>
 

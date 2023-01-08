@@ -35,11 +35,21 @@
               Relatório 
           </v-btn>
         </v-col>
-        <v-col
-        cols="12">
+<!-- primeiro col -->
+        <v-col cols="8">
+          <v-card height="1000">  
+            
+          </v-card>
+        </v-col>
+<!-- segundo col -->
+        <v-col cols="4">
+          <v-card height="300">
 
+          </v-card>
 
-          
+          <v-card height="300" style="margin:16px 0">
+
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
