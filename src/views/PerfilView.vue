@@ -18,6 +18,7 @@
 
                     <v-card-title class="text-center">
                     James
+                    <!-- {{  selecteUtilizadors.nome }} -->
                     </v-card-title>
 
                     <v-card-subtitle class="text-center">
@@ -173,7 +174,21 @@ import BarChart from '../components/BarChart.vue'
 
     export default {
         name: 'App',
-         components: { BarChart, }
+         components: { BarChart, },
+         data() {
+            return {
+                utilizadors:[],
+                
+            };
+         },
+         created(){
+            this.utilizadors =JSON.parse(localStorage.getItem('utilizadors'));
+         },
+         computed:{
+            selecteUtilizadors(){
+                return this.utilizadors.find((utilizadors) => utilizadors.nome == this.$route.params.nome);
+            }
+         }
     }
 </script>
 

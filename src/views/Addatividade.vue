@@ -12,7 +12,7 @@
                 <v-text-field
                   label="Nome da Atividade*"
                   required
-                  
+                  v-model="form.atividade"
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
@@ -53,7 +53,7 @@
               <v-select
                   :items="['A', 'B', 'C', 'D','E']"
                   label="Nivel*"
-                  
+                  v-model="form.nivel"
                   required
                 ></v-select>
               
@@ -81,34 +81,34 @@
     name:'Addatividade',
     data() {
       return {
-        
+          form:{
+            atividade:'',
+            nivel:'',
+          }
       }
     },
     methods:{
       addatividade(){
+        const atividades = JSON.parse(localStorage.getItem('atividades'));
 
-        alert('Novo atividade ja adicionou!')
-        this.$router.push({ name:'table'})
+        const newatividade={
+            atividade: this.from.atividade,
+            nivel: this.from.nivel,
+            descricao:'asdhlkjasjhkdl',
+            diagnostico: 159,
+            objetivo:'fly',
+            meta:'11',
+        };
 
+        atividades.push(newatividade);
 
-        // const atividades = JSON.parse(localStorage.getItem('atividades'));
-
-        // const newatividade={
-        //     name: this.from.name,
-        //     nivel: this.from.nivel,
-        //     descricao:'asdhlkjasjhkdl',
-        //     diagnostico: 159,
-        //     objetivo:'fly',
-        //     meta:'11',
-        // };
-
-        // atividades.push(newatividade);
-
-        // localStorage.setItem('atividades', JSON.stringify(atividades));
+        localStorage.setItem('atividades', JSON.stringify(atividades));
         
-      
+        alert('Novo atividade ja adicionou!')
+        this.$router.push({ name:'atividades'})
 
       }
     }
-  }
+  };
+  // localStorage.setItem('atividades', JSON.stringify(atividades));
 </script>

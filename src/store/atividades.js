@@ -4,16 +4,16 @@ export const useCounterStore = defineStore('atividade', {
   state: () =>({
     atividades:[
       {
-        nomeAtividade:"",
-        diagonostico:"",
+        tema:"",
+        NomeAtividade:"",
+        nivel:"",
+        descricao:"",
         objetivo:"",
-        Metas:"",
-        AtividadePrevista:"",
-        Recursos:"",
-        Intervenientes:"",
-        Calendarizacao:"",
-        Indicadores:"",
-        Instrumentos:"",
+        meta:"",
+        calendarizacao:"",
+        colaboradores:"",
+        status:"",
+        
       }
     ],
   }),

@@ -157,9 +157,6 @@
     created() {
 			if (!localStorage.getItem('atividades')) localStorage.setItem('atividades', JSON.stringify(this.atividades));
 		},
-    methods:{
-  
-    }
     
   }
 </script>
