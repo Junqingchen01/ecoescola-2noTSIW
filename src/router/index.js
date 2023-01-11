@@ -8,7 +8,7 @@ import Addatividade from '../views/Addatividade.vue'
 import PerfilEditar from '../views/PerfilEditar.vue'
 import DashboardView from '@/views/DashboardView.vue'
 import RelatorioView from '@/views/RelatorioView.vue'
-import Login from '@/Login.vue'
+import Login from '@/views/Login.vue'
 import App from '@/App.vue';
 
 const routes = [

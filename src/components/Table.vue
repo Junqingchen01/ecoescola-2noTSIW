@@ -85,10 +85,6 @@
                   <td>{{ item.calendarizacao }}</td>
                   <td>{{ item.colaboradore }}</td>
                   <td>
-                    <!-- <v-select 
-                    :items="['Em progresso','Concluido']"
-                    required
-                  ></v-select> -->
                   {{ item.status }}
                   </td>
                   
@@ -147,7 +143,6 @@
             objetivo:'fly',
             meta:'11',
             calendarizacao:'1',
-            
           },
          
           
@@ -156,6 +151,9 @@
     },
     created() {
 			if (!localStorage.getItem('atividades')) localStorage.setItem('atividades', JSON.stringify(this.atividades));
+      else{
+        this.atividades = JSON.parse(localStorage.getItem('atividades'))
+      }
 		},
     
   }

@@ -26,6 +26,7 @@
                                     <v-btn 
                                     color="teal accent-3"
                                     width="400"
+                                    @click="login()"
                                     >
                                     LOGIN
                                     </v-btn>
@@ -43,9 +44,21 @@
     export default{
         data() {
             return {
-               
+               form:{
+                username:'',
+                password:'',
+               }
             }
         },
+        methods:{
+            login(){
+                if (this.form.username == 'User' && this.form.password == 'Esmad_2223') {
+					this.$router.push({ name: '/' });
+				} else {
+					alert('Wrong credentials!');
+				}
+            }
+        }
     }
 </script>
 

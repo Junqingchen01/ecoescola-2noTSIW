@@ -10,10 +10,13 @@ import Vue from 'vue';
 import VCalendar from 'v-calendar';
 import 'v-calendar/dist/style.css';
 
+const pinia = createPinia()
+
 loadFonts()
 
 createApp(App).use(store).use(router).use(router).use(createPinia())
   .use(vuetify)
+  .use(pinia)
   .use(VCalendar, {
     componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />
                 // ...other defaults

@@ -107,8 +107,6 @@
 
                             </v-col>
                             
-
-                            
                             <v-col cols="10" class="ma-2 pa-2">
                                 <v-card-subtitle class="text-left font-weight-black">
                                     Localização
@@ -146,6 +144,8 @@
         },
         methods:{
             Guardar(){
+
+
                 alert('Dados guardar com sucesso!')
                 this.$router.push({name:'perfil'})
             }

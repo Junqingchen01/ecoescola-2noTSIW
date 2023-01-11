@@ -12,7 +12,7 @@
     "chart.js": "^4.1.2",
     "core-js": "^3.8.3",
     "node": "^19.3.0",
-    "pinia": "^2.0.23",
+    "pinia": "^2.0.28",
     "public": "^0.1.5",
     "roboto-fontface": "*",
     "v-calendar": "^3.0.0-alpha.8",

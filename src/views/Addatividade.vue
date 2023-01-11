@@ -19,6 +19,7 @@
                 <v-text-field
                   label="Descrição do Atividade*"
                   required
+                  v-model="form.descricao"
                 ></v-text-field>
               </v-col>
 
@@ -26,6 +27,7 @@
                 <v-text-field
                   label="Objetivos do Atividade*"
                   required
+                  v-model="form.objetivo"
                 ></v-text-field>
               </v-col>
 
@@ -33,6 +35,7 @@
                 <v-text-field
                   label="Diagonóstico da atividade*"
                   required
+                  v-model="form.diagnostico"
                 ></v-text-field>
               </v-col>
 
@@ -40,6 +43,7 @@
                 <v-text-field
                   label="Metas da atividade*"
                   required
+                  v-model="form.meta"
                 ></v-text-field>
               </v-col>
 
@@ -47,16 +51,35 @@
                 <v-text-field
                   label="Calendarização*"
                   required
+                  v-model="form.calendarizacao"
                 ></v-text-field>
               </v-col>
 
+              <v-col cols="12">
+                <v-text-field
+                  label="colaboradore*"
+                  required
+                  v-model="form.colaboradore"
+                ></v-text-field>
+              </v-col>
+
+              <v-col cols="12">
+                <v-select 
+                    :items="['Em progresso','completo']"
+                    label="status*"
+                    v-model="form.status"
+                    required
+                  ></v-select>
+              </v-col>
+
+              <v-col cols="12">
               <v-select
                   :items="['A', 'B', 'C', 'D','E']"
                   label="Nivel*"
                   v-model="form.nivel"
                   required
                 ></v-select>
-              
+              </v-col>
             </v-row>
           </v-container>
         </v-card-text>
@@ -84,6 +107,13 @@
           form:{
             atividade:'',
             nivel:'',
+            descricao:'',
+            diagnostico:'',
+            objetivo:'',
+            meta:'',
+            calendarizacao:'',
+            colaboradore:'',
+            status:'',
           }
       }
     },
@@ -92,12 +122,16 @@
         const atividades = JSON.parse(localStorage.getItem('atividades'));
 
         const newatividade={
-            atividade: this.from.atividade,
-            nivel: this.from.nivel,
-            descricao:'asdhlkjasjhkdl',
-            diagnostico: 159,
-            objetivo:'fly',
-            meta:'11',
+            atividade: this.form.atividade,
+            nivel: this.form.nivel,
+            descricao: this.form.descricao,
+            diagnostico:  this.form.diagnostico,
+            objetivo: this.form.objetivo,
+            meta: this.form.meta,
+            calendarizacao: this.form.calendarizacao,
+            colaboradore: this.form.colaboradore,
+            status: this.form.status
+
         };
 
         atividades.push(newatividade);
@@ -105,7 +139,7 @@
         localStorage.setItem('atividades', JSON.stringify(atividades));
         
         alert('Novo atividade ja adicionou!')
-        this.$router.push({ name:'atividades'})
+        this.$router.push({ name:'table'})
 
       }
     }
