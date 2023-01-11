@@ -32,7 +32,7 @@
 
         <v-app-bar  theme="dark"  hide-on-scroll  absolute>
           <v-spacer></v-spacer>
-          <v-btn variant="text" icon="mdi-bell"></v-btn>
+          <v-btn variant="text" icon="mdi-bell"  @click="$router.push({ name: 'login' })"></v-btn>
 
           <v-btn variant="text" icon="mdi-close"></v-btn> 
         </v-app-bar>

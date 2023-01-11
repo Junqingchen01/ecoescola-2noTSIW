@@ -5,9 +5,11 @@ import ProjetosView from '../views/ProjetosView.vue'
 import PerfilView from '../views/PerfilView.vue'
 import CalendarioView from '../views/CalendarioView.vue'
 import Addatividade from '../views/Addatividade.vue'
-import PerfilEditar from '../views/PerfilEditar.vue';
+import PerfilEditar from '../views/PerfilEditar.vue'
 import DashboardView from '@/views/DashboardView.vue'
 import RelatorioView from '@/views/RelatorioView.vue'
+import Login from '@/Login.vue'
+import App from '@/App.vue';
 
 const routes = [
   {
@@ -49,6 +51,16 @@ const routes = [
     path:'/relatorio',
     name:'relatorio',
     component:RelatorioView
+  },
+  {
+    path:'/login',
+    name:'login',
+    component:Login
+  },
+  {
+    path:'/app',
+    name:'app',
+    component:App
   },
 ]
 
