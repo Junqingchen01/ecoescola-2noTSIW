@@ -1,6 +1,6 @@
 <template>
     <v-container class="py-8 px-10">
-        <v-row class=" d-flex justify-center align-center ">
+        <v-row class=" d-flex justify-center ">
             <v-col cols="6" >
                 <v-card>
                     <v-card-title>
@@ -10,17 +10,15 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <v-text-field
-                            
-                              outline
                               label="Nome de utilizador"
                               type="text"
                               v-model="username"></v-text-field>
                               <v-text-field
-                              outline
-                              hide-details
+                              
                               label="Palavra-Passe"
-                              type="password"
+                              type="text"
                               v-model="password"></v-text-field>
+
 
                               <div class="text-center pt-4">
                                     <v-btn 
@@ -42,18 +40,18 @@
 
 <script>
     export default{
+        name:'login',
         data() {
             return {
-               form:{
-                username:'',
-                password:'',
-               }
+               username:'',
+               password:'',
             }
         },
         methods:{
             login(){
-                if (this.form.username == 'User' && this.form.password == 'Esmad_2223') {
-					this.$router.push({ name: '/' });
+                if (this.username == 'User' && this.password == 'Esmad_2223') {
+                    alert('Welcome !');
+					this.$router.push({ name: 'home' });
 				} else {
 					alert('Wrong credentials!');
 				}
