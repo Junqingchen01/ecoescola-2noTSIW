@@ -39,12 +39,15 @@
 </template>
 
 <script>
+import { useUsersotre } from '../store/utilizador.js'
+
     export default{
         name:'login',
         data() {
             return {
                username:'',
                password:'',
+               utilizadors: useUsersotre(),
             }
         },
         methods:{
@@ -55,7 +58,8 @@
 				} else {
 					alert('Wrong credentials!');
 				}
-            }
+            },
+            
         }
     }
 </script>

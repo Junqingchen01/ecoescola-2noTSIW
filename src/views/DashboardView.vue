@@ -66,7 +66,7 @@
 <!-- N tarefa ja completo -->
             <v-card height="150" class="my-card">
               <v-card-title class="text-center">
-                         Numero tarefa ja completo
+                         Pontos
                </v-card-title>
                 <v-spacer></v-spacer>
                 <v-card-text class="text-center text-h5 ">
@@ -103,14 +103,58 @@
                 </v-card-subtitle>
             </v-card>
 <!--card Tarefas -->
-            <v-card height="315" class="my-card">
-              <v-card-title class="text-center">
+            <v-card height="315" class="my-card text-center" >
+              <v-card-title>
                 Tarefas
                </v-card-title>
-                <v-spacer></v-spacer>
-                <v-card-subtitle class="text-center text-h5">
-                                    
-                </v-card-subtitle>
+                <v-card-text>
+                  <v-row>
+                    <v-col>
+                      <v-list>
+                        <v-list-item v-for="(task, index) in tasks" :key="index">
+                          <v-list-item-title>{{ task }}</v-list-item-title>
+                            <v-btn color="teal accent-2" @click="removeTask(index)">Done</v-btn>
+                        </v-list-item>
+                      </v-list>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col>
+                      <v-dialog
+                        v-model="dialog"
+                      >
+                        <template v-slot:activator="{ props }">
+                          <div class="text-center">
+                            <v-btn
+                              color="teal accent-2"
+                              v-bind="props">
+                              Adicionar Tarefa
+                            </v-btn>
+                          </div>  
+                        </template>
+
+                        <v-card>
+                          <v-card-text>
+                            <v-row>
+                              <v-col cols="11">
+                                <v-text-field v-model="newTask" @keyup.enter="addTask" label="Add a new task"></v-text-field>
+                              </v-col>
+                              <v-col>
+                                <v-btn 
+                                style="margin:8px 0"
+                                color="teal accent-2" 
+                                @click="addTask">Add</v-btn>
+                              </v-col>
+                            </v-row>
+                          </v-card-text>
+                          <v-card-actions>
+                              <v-btn color="teal accent-2" block @click="dialog = false">Fichar</v-btn>
+                          </v-card-actions>
+                        </v-card>
+                      </v-dialog>
+                    </v-col>
+                  </v-row>
+                </v-card-text>
             </v-card>
         </v-col>
       </v-row>
@@ -124,7 +168,29 @@ import BarChart_pordia from '../components/BarChart_pordia.vue';
 
 export default {
   name: 'App',
-  components: { BarChart, DoughnutChart, BarChart_pordia}
+  components: { BarChart, DoughnutChart, BarChart_pordia},
+  data() {
+    return {
+      newTask: '',
+      tasks: JSON.parse(localStorage.getItem("tasks")) || [],
+      dialog: false,
+    }
+  },
+  methods: {
+    addTask() {
+      if (this.newTask) {
+        this.tasks.push(this.newTask);
+        this.newTask = '';
+        localStorage.setItem("tasks", JSON.stringify(this.tasks));
+        alert('Uma nova tarefa ja addicionar!!');
+      }
+    },
+    removeTask(index) {
+      this.tasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(this.tasks));
+      alert('finaliza um tarefa!')
+    }
+  },
 }
 
 </script>

@@ -1,11 +1,10 @@
 import { defineStore } from 'pinia'
 
-
-
-export const useUsersotre = defineStore('utilizadors', {
+export const useUsersotre = defineStore('utilizador', {
   state: () =>({ 
     utilizadors:[
-      {
+      { 
+       
         nome:"joao",
         apelido:'Rocha',
         username:'User',
@@ -27,5 +26,9 @@ export const useUsersotre = defineStore('utilizadors', {
   }),
   getters: {
     getUsers: (state) => state.utilizadors,
+
+    getInfByUsername: (state) =>
+    (username) => state.utilizadors.find(utilizador => utilizador.username == username),
   },
 })
+

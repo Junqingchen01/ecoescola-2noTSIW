@@ -17,7 +17,7 @@
                     ></v-img>
 
                     <v-card-title class="text-center">
-                    {{  utilizadors.nome }}
+                    <!-- {{  utilizador.nome }} -->
                     </v-card-title>
 
                     <v-card-subtitle class="text-center">
@@ -173,17 +173,17 @@ import BarChart from '../components/BarChart.vue'
 import { useUsersotre } from '../store/utilizador.js'
 
     export default {
-        name: 'App',
          components: { BarChart, },
          data() {
             return {
-                utilizadors: useUsersotre()
+                store: useUsersotre(),
+                utilizador:{},
+                
                 
             };
-         },
-         created () {
-            console.log(this.utilizadors.getUsers);;
-         },
+         },created() {
+        this.utilizador = this.store.getInfByUsername(this.$route.params.utilizadorusername);
+    },
 }
 </script>
 
