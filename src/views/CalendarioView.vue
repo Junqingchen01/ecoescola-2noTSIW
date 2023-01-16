@@ -36,9 +36,9 @@
         <v-card  
           style="margin:48px 0"
         >
-          <template v-slot:title>
-            This is a title
-          </template>
+          <v-card-title class="text-center">
+            Criar Evento
+          </v-card-title>
 
           <v-card-text>
                 <v-row>

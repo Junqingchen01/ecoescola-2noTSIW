@@ -40,7 +40,7 @@ const routes = [
       if (isAuthenticated) {
         next();
       } else {
-        next({ name: 'Login' });
+        next({ name: 'login' });
       }
     },
     
