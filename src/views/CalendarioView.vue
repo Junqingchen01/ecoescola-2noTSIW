@@ -72,7 +72,7 @@
                             <v-btn
                               color="teal accent-2"
                               style="margin: 8px 8px;"
-                              @click="addEvento()"
+                              
                             >
                               Enviar
                             </v-btn>

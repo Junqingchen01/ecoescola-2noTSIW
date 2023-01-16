@@ -53,6 +53,7 @@ import { useUsersotre } from '../store/utilizador.js'
         methods:{
             login(){
                 if (this.username == 'User' && this.password == 'Esmad_2223') {
+                    localStorage.setItem('isAuthenticated', true);
                     alert('Welcome !');
 					this.$router.push({ name: 'home' });
 				} else {

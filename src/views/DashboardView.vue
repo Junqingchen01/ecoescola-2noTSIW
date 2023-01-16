@@ -192,9 +192,7 @@ export default {
     }
   },
 }
-
 </script>
-
 <style>
   .my-card{
     margin:16px 0

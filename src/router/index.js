@@ -15,47 +15,64 @@ const routes = [
   {
     path: '/table',
     name: 'table',
-    component: TableView
+    component: TableView,
+    
   },
   {
     path:'/projetos',
     name:'projetos',
-    component:ProjetosView
+    component:ProjetosView,
+    
   },
   {
     path:'/perfil',
     name:'perfil',
-    component:PerfilView
+    component:PerfilView,
+   
   },
   {
     path:'/',
     name:'home',
-    component:CalendarioView
+    component:CalendarioView,
+    beforeEnter(to, from, next) {
+      const isAuthenticated = localStorage.getItem('isAuthenticated');
+
+      if (isAuthenticated) {
+        next();
+      } else {
+        next({ name: 'Login' });
+      }
+    },
+    
   },
   {
     path:'/addatividade',
     name:'addatividade',
-    component:Addatividade
+    component:Addatividade,
+    
   },
   {
     path:'/perfileditar',
     name:'perfileditar',
-    component:PerfilEditar
+    component:PerfilEditar,
+    
   },
   {
     path:'/dashboard',
     name:'dashboard',
-    component:DashboardView
+    component:DashboardView,
+   
   },
   {
     path:'/relatorio',
     name:'relatorio',
-    component:RelatorioView
+    component:RelatorioView,
+    
   },
   {
     path:'/login',
     name:'login',
-    component:Login
+    component:Login,
   },
   {
     path:'/app',
@@ -70,3 +87,4 @@ const router = createRouter({
 })
 
 export default router
+
