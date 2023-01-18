@@ -17,7 +17,7 @@
                     ></v-img>
 
                     <v-card-title class="text-center">
-                    <!-- {{  utilizador.nome }} -->
+                   {{ userlogado.nome }}
                     </v-card-title>
 
                     <v-card-subtitle class="text-center">
@@ -169,6 +169,7 @@
 </template>
 
 <script>
+
 import BarChart from '../components/BarChart.vue'
 import { useUsersotre } from '../store/utilizador.js'
 
@@ -176,14 +177,13 @@ import { useUsersotre } from '../store/utilizador.js'
          components: { BarChart, },
          data() {
             return {
-                store: useUsersotre(),
-                utilizador:{},
-                
-                
+
+                utilizadors:useUsersotre(),
+                userlogado:JSON.parse(localStorage.getItem('userlogado'))
             };
-         },created() {
-        this.utilizador = this.store.getInfByUsername(this.$route.params.utilizadorusername);
-    },
+         },
+        
+        
 }
 </script>
 

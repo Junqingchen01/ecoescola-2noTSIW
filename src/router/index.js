@@ -38,6 +38,7 @@ const routes = [
     path:'/perfil',
     name:'perfil',
     component:PerfilView,
+
     beforeEnter(to, from, next) {
       const isAuthenticated = localStorage.getItem('isAuthenticated');
       
