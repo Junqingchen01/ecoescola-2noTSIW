@@ -11,6 +11,7 @@ import RelatorioView from '@/views/RelatorioView.vue'
 import Login from '@/views/Login.vue'
 import App from '@/App.vue';
 
+
 const routes = [
   {
     path: '/table',
@@ -22,6 +23,15 @@ const routes = [
     path:'/projetos',
     name:'projetos',
     component:ProjetosView,
+    beforeEnter(to, from, next) {
+      const isAuthenticated = localStorage.getItem('isAuthenticated');
+      
+      if (isAuthenticated) {
+        next();
+      } else {
+        next({ name: 'login' });
+      }
+    },
     
   },
   {
@@ -82,12 +92,16 @@ const routes = [
     path:'/login',
     name:'login',
     component:Login,
+
+    
   },
   {
     path:'/app',
     name:'app',
     component:App, 
   },
+
+  
 ]
 
 const router = createRouter({
