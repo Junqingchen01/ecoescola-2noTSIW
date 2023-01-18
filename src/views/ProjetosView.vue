@@ -220,7 +220,7 @@
           <v-card height="300" style="margin:16px 0">
             <v-card-text>
                   <v-row>
-                    <v-col v-for="message in messages" :key="message.id" cols="12">
+                    <v-col v-for="message in messages" :key="message" cols="12">
                       <v-card>
                         <v-card-text>{{ message.text }}</v-card-text>
                       </v-card>
@@ -266,8 +266,9 @@ export default {
   methods:{
     sendMessage() {
       if (this.messageText) {
-        this.messages.push({ text: this.messageText })
+        this.messages.push(this.messageText)
         this.messageText = ''
+        console.log(this.messageText)
       }
     }
   }

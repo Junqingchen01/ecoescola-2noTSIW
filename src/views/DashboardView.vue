@@ -151,7 +151,7 @@
                               <v-btn color="teal accent-2" block @click="dialog = false">Fichar</v-btn>
                           </v-card-actions>
                         </v-card>
-                      </v-dialog>
+                      </v-dialog> 
                     </v-col>
                   </v-row>
                 </v-card-text>
