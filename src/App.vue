@@ -10,12 +10,11 @@
 <script>
   import Sitebar from"./components/Sitebar.vue";
   import Table from "./components/Table.vue";
-  
-
   export default {
     data() {
       return {
-        
+         // v-if="isAuthenticated"
+        isAuthenticated: false
       }
     },
     name:"App",
@@ -24,7 +23,7 @@
       Sitebar,
       Table
 
-    }
+    },
   }
 </script>
 

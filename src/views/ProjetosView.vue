@@ -113,16 +113,75 @@
               </v-row>
           </v-card>
 <!-- segunda card grande -->
-          <v-card height="300" color="grey darken-1">  
+          <v-card height="450" color="grey darken-1">  
             <div class="d-flex justify-end">
               <v-card-title >
                 Atas
               </v-card-title>
             </div>  
+            <v-card-text>
+              <v-row>
+                <v-col cols="6">
+                  <v-row >
+                    <v-col cols="12">
+                      <v-layout class="d-flex align-center">
+                         Data do Início   
+                        <v-text-field  class="textcss" variant="solo"></v-text-field>
+                      </v-layout> 
+                      <v-layout class="d-flex align-center">
+                        Grau da Sessão
+                        <v-text-field  class="textcss" variant="solo"></v-text-field>
+                      </v-layout>
+                      <v-layout class="d-flex align-center">
+                        Tipo da Sessão
+                        <v-text-field  class="textcss" variant="solo"></v-text-field>
+                      </v-layout>    
+                      <!-- <v-layout> -->
+                          Descrição da Sessão
+                          <v-text-field   variant="solo" style="height: 100px;"></v-text-field>
+                      <!-- </v-layout>    -->
+                    </v-col>
+                  </v-row>
+                </v-col>
+                <v-col cols="6">
+                  <v-row >
+                    <v-col cols="11">
+                      <v-layout class="d-flex align-center">
+                        Data do Fim
+                        <v-text-field  class="textcss" variant="solo"></v-text-field>
+                      </v-layout>
+                      <v-layout>
+                      Inserir fotos
+                        <v-text-field  class="textcss" variant="solo" style="height: 100px;">
+                        </v-text-field>
+                        <div  class="d-flex align-center">
+                            <v-btn
+                              rounded="pill"
+                              color="teal accent-2"
+                              style="width: 90px; height:30px ;"
+                            >
+                              Submeter 
+                            </v-btn>
+                          </div>
+                      </v-layout> 
+                      <div class="d-flex justify-end">
+                        <v-btn color="teal accent-2" style="width:250px; height: 60px;" >
+                          Enviar Ata 
+                        </v-btn>
+                      </div>
+                    </v-col>
+                  </v-row>
+                </v-col>
+              </v-row>
+            </v-card-text>
           </v-card>
 <!-- treicra card grande -->
-          <v-card height="300">  
-            
+          <v-card height="200">  
+            <v-row>
+              <v-col>
+
+              </v-col>
+            </v-row>
           </v-card>
         </v-col>
 <!-- segundo col -->
@@ -153,15 +212,26 @@
                 class="mx-2"
                 color="#11999E"
               >
-                <v-icon dark>
-                  mdi-plus
-                </v-icon>
+              Adicionar Membro
               </v-btn>
             </div>
           </v-card>
-
+<!-- chat -->
           <v-card height="300" style="margin:16px 0">
-
+            <v-card-text>
+                  <v-row>
+                    <v-col v-for="message in messages" :key="message.id" cols="12">
+                      <v-card>
+                        <v-card-text>{{ message.text }}</v-card-text>
+                      </v-card>
+                    </v-col>
+                  </v-row>
+              </v-card-text> 
+              <v-divider></v-divider>  
+              <v-card-actions>
+                <v-text-field v-model="messageText" label="Enviar uma mensagem ...."></v-text-field>
+                <v-btn @click="sendMessage" color="#11999E">Send</v-btn>  
+              </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
@@ -173,6 +243,12 @@
 export default {
   data() {
     return {
+      data() {
+        return {
+          messageText: '',
+          messages: []
+        }
+      },
       Menbros: [
         {
           icon:require('../assets/icon.png'),
@@ -187,10 +263,21 @@ export default {
       ]
     }
   },
+  methods:{
+    sendMessage() {
+      if (this.messageText) {
+        this.messages.push({ text: this.messageText })
+        this.messageText = ''
+      }
+    }
+  }
 
 }
 </script>
 
 <style>
- 
+  .textcss{
+    margin-top:20px;
+    height: 70px;
+  }
 </style>

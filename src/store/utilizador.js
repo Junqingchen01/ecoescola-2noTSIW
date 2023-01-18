@@ -13,6 +13,7 @@ export const useUsersotre = defineStore('utilizador', {
         password:'Esmad_2223',
         localizacao:'Esmad',
         pontos:'',
+        tarefas:0,
       },
       // {
       //   nome:'admin',

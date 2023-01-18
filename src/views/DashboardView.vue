@@ -136,8 +136,8 @@
                         <v-card>
                           <v-card-text>
                             <v-row>
-                              <v-col cols="11">
-                                <v-text-field v-model="newTask" @keyup.enter="addTask" label="Add a new task"></v-text-field>
+                              <v-col cols="10">
+                                <v-text-field v-model="newTask" @keyup.enter="addTask" label="Addicionar uma nova tarefa."></v-text-field>
                               </v-col>
                               <v-col>
                                 <v-btn 
@@ -172,7 +172,7 @@ export default {
   data() {
     return {
       newTask: '',
-      tasks: JSON.parse(localStorage.getItem("tasks")) || [],
+      tasks: JSON.parse(localStorage.getItem("tasks")) || [123,],
       dialog: false,
     }
   },
@@ -188,7 +188,7 @@ export default {
     removeTask(index) {
       this.tasks.splice(index, 1);
       localStorage.setItem("tasks", JSON.stringify(this.tasks));
-      alert('finaliza um tarefa!')
+      alert('Ganhaste um ponto !')
     }
   },
 }

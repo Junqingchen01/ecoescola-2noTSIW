@@ -88,12 +88,13 @@
 export default {
     data() {
       return {
-        form:{
-        resumo: 'R Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        processo: 'P Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        conclucao: 'C Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        }
-      }
+        newrelatorio:'',
+          form:JSON.parse(localStorage.getItem("form")) || {
+            resumo:'',
+            processo:'',
+            conclucao:'',
+          }
+          }
     },
     methods:{
       alteracao(){
@@ -102,8 +103,9 @@ export default {
           processo:this.form.processo,
           conclucao:this.form.conclucao
         };
-        this.form.setItem(newrelatorio);
-        alert('Novo atividade ja !')
+        localStorage.setItem("form", JSON.stringify(newrelatorio));
+
+        alert('Relatório está guardado!')
       }
     }
 

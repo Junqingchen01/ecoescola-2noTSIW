@@ -28,6 +28,15 @@ const routes = [
     path:'/perfil',
     name:'perfil',
     component:PerfilView,
+    beforeEnter(to, from, next) {
+      const isAuthenticated = localStorage.getItem('isAuthenticated');
+      
+      if (isAuthenticated) {
+        next();
+      } else {
+        next({ name: 'login' });
+      }
+    },
    
   },
   {
@@ -36,7 +45,7 @@ const routes = [
     component:CalendarioView,
     beforeEnter(to, from, next) {
       const isAuthenticated = localStorage.getItem('isAuthenticated');
-
+      
       if (isAuthenticated) {
         next();
       } else {
@@ -77,7 +86,7 @@ const routes = [
   {
     path:'/app',
     name:'app',
-    component:App
+    component:App, 
   },
 ]
 
