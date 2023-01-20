@@ -17,14 +17,14 @@
                     ></v-img>
 
                     <v-card-title class="text-center">
-                   {{ userlogado.nome }}
+                   {{ userlogado.nome }} {{ userlogado.apelido }}
                     </v-card-title>
 
                     <v-card-subtitle class="text-center">
-                        Contacto:
+                        Contacto: {{userlogado.contacto}}
                     </v-card-subtitle>
                     <v-card-subtitle class="text-center">
-                        E-mail:
+                        E-mail:{{ userlogado.email }}
                     </v-card-subtitle>
 
                     <v-card-text class="text-center">
@@ -52,7 +52,7 @@
                             </v-card-title>
                             <v-spacer></v-spacer>
                                 <v-card-subtitle class="text-center text-h5">
-                                    ESMAD
+                                    {{ userlogado.localizacao }}
                                 </v-card-subtitle>
                         </v-card>
  <!-- atividade em progresso -->
@@ -104,10 +104,10 @@
                             style="margin-top: 47px;"
                         >
                             <v-card-title class="text-center">
-                                Nº atividade concluido                   
+                                Nº tarefa concluido                   
                             </v-card-title>
                             <v-card-subtitle class="text-center">
-                                Numero
+                                {{userlogado.tarefas}}
                             </v-card-subtitle>
                             
                         </v-card>
@@ -127,7 +127,8 @@
                             </v-card-title>
 
                             <v-card-subtitle class="text-center">
-                                Pontos
+                                <div>{{userlogado.pontos}}</div>
+                                
                             </v-card-subtitle>
 
                     </v-card>

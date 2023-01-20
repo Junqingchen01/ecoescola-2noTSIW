@@ -165,6 +165,7 @@
 import BarChart from '../components/BarChart.vue'
 import DoughnutChart from '../components/DoughnutChart.vue';
 import BarChart_pordia from '../components/BarChart_pordia.vue';
+import { useUsersotre } from '../store/utilizador.js';
 
 export default {
   name: 'App',
@@ -174,6 +175,9 @@ export default {
       newTask: '',
       tasks: JSON.parse(localStorage.getItem("tasks")) || [123,],
       dialog: false,
+      utilizadors:useUsersotre(),
+      userlogado:JSON.parse(localStorage.getItem('userlogado')),
+
     }
   },
   methods: {
@@ -186,9 +190,13 @@ export default {
       }
     },
     removeTask(index) {
+      
+
+
       this.tasks.splice(index, 1);
       localStorage.setItem("tasks", JSON.stringify(this.tasks));
       alert('Ganhaste um ponto !')
+
     }
   },
 }

@@ -19,8 +19,7 @@
                 
                 ></v-list-item>
                 
-                <v-list-item >{{ userlogado.nome }} {{ userlogado.apelido }}</v-list-item>
-                <v-list-item >{{ userlogado.localizacao }}</v-list-item>
+                <v-list-item v-if="isAuthenticated">{{ userlogado.nome }} {{ userlogado.apelido }}<v-spacer></v-spacer>{{ userlogado.localizacao }}</v-list-item>
             <v-list-item prepend-icon="mdi-folder" title="PROJETOS" value="projetos" @click="$router.push({ name: 'projetos' })"></v-list-item>
             <v-list-item prepend-icon="mdi-account" title="PERFIL" value="prefil" @click="this.$router.push({ name: 'perfil' })"></v-list-item>
             <v-list-item prepend-icon="mdi-calendar-month" title="CALENDARIO" value="calendario" @click="$router.push({ name: 'home' })"></v-list-item>
@@ -44,10 +43,11 @@
       //
       data() {
         return {
+          isAuthenticated:Boolean(localStorage.getItem('isAuthenticated')),
           logo: require('../assets/Group23.jpg'),
           icon: require('../assets/icon.png'),
           utilizadors: useUsersotre(),
-    
+          
           userlogado:JSON.parse(localStorage.getItem('userlogado'))
  
         }
