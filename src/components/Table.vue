@@ -107,9 +107,14 @@
 </template>
 
 <script>
+import { useUsersotre } from '../store/utilizador.js'
+
   export default {
     data () {
       return {
+        utilizadors:useUsersotre(),
+        userlogado:JSON.parse(localStorage.getItem('userlogado')),
+
         atividades: [
           { 
             atividade: 'Frozen Yogurt',
@@ -119,7 +124,7 @@
             objetivo:'fly',
             meta:'11',
             calendarizacao:'1',
-            colaboradore:'12',
+            colaboradore:'User',
             status:'Em progresso',
             
           },
@@ -131,7 +136,7 @@
             objetivo:'flly',
             meta:'22',
             calendarizacao:'1',
-            colaboradore:'12',
+            colaboradore:'Admin',
             status:'Em progresso',
             
           },
@@ -155,6 +160,5 @@
         this.atividades = JSON.parse(localStorage.getItem('atividades'))
       }
 		},
-    
   }
 </script>

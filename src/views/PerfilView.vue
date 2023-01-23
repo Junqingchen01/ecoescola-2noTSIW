@@ -65,14 +65,14 @@
                                 Atividades em progresso:                  
                             </v-card-title>
                             <v-card-text class="text-center">
-                                Numero
+                                {{ATprogresso.atividade}}
                             </v-card-text>
                             
                             <v-card-title class="text-center">
                                 Ações e Atividades Previstas:                   
                             </v-card-title>
                             <v-card-text class="text-center">
-                                
+                                {{ATprogresso.objetivo}}
                             </v-card-text>
                         </v-card>
 <!--Numero atividades concluidos por mes-->
@@ -143,7 +143,7 @@
                                 Metas:                  
                             </v-card-title>
                             <v-card-text class="text-center">
-                                Metass
+                                {{ATprogresso.meta}}
                             </v-card-text>
                     
                     </v-card>
@@ -178,14 +178,14 @@ import { useUsersotre } from '../store/utilizador.js'
          components: { BarChart, },
          data() {
             return {
-
                 utilizadors:useUsersotre(),
-                userlogado:JSON.parse(localStorage.getItem('userlogado'))
+                userlogado:JSON.parse(localStorage.getItem('userlogado')),
+                ATprogresso:JSON.parse(localStorage.getItem('atividadeon')),
+                
             };
          },
+        }        
         
-        
-}
 </script>
 
 <style lang="scss" scoped>

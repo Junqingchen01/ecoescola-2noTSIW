@@ -23,6 +23,8 @@ export const useUsersotre = defineStore('utilizador', {
         contacto:'123456789',
         password:'Esmad_2223',
         localizacao:'Esmad',
+        pontos:11,
+        tarefas:10,
       },
       {
         nome:'abc',
@@ -38,12 +40,12 @@ export const useUsersotre = defineStore('utilizador', {
   getters: {
     getUsers: (state) => state.utilizadors,
 
-
-
     getInfByUsername: (state) =>
     (username) => state.utilizadors.find(utilizador => utilizador.username == username),
 
+    isAuthenticated:(state) =>state.userlogado,
 
   },
+  
 })
 

@@ -189,9 +189,6 @@
           <v-card height="300">
             <v-table no-border>
               <thead>
-                <th class="text-center">
-                  icons
-                </th>
                 <th>
                   Nome
                 </th>
@@ -201,7 +198,6 @@
               </thead>
               <tbody>
                 <tr v-for="item in Menbros" :key="item.name" class="text-center">
-                  <td>{{  item.icon }}</td>
                   <td>{{  item.nome }}</td>
                   <td>{{  item.cargo }}</td>
                 </tr>
@@ -251,12 +247,12 @@ export default {
       },
       Menbros: [
         {
-          icon:require('../assets/icon.png'),
+
           nome:'James',
           cargo:'admin'
         },
         {
-          icon:'img',
+
           nome:'chen',
           cargo:'professor'
         },

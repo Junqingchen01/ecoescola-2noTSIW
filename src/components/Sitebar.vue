@@ -43,11 +43,11 @@
       //
       data() {
         return {
-          isAuthenticated:Boolean(localStorage.getItem('isAuthenticated')),
+          isAuthenticated:(localStorage.getItem('isAuthenticated')),
           logo: require('../assets/Group23.jpg'),
           icon: require('../assets/icon.png'),
           utilizadors: useUsersotre(),
-          
+            
           userlogado:JSON.parse(localStorage.getItem('userlogado'))
  
         }

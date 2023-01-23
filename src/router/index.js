@@ -43,6 +43,7 @@ const routes = [
       const isAuthenticated = localStorage.getItem('isAuthenticated');
       
       if (isAuthenticated) {
+
         next();
       } else {
         next({ name: 'login' });

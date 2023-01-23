@@ -40,6 +40,7 @@
 
 <script>
 import { useUsersotre } from '../store/utilizador.js'
+import { atividadestore } from '../store/atividades.js'
 
     export default{
         name:'login',
@@ -48,14 +49,18 @@ import { useUsersotre } from '../store/utilizador.js'
                username:'',
                password:'',
                utilizadors: useUsersotre(),
+               atividades:atividadestore(),
+            
             }
         },
         methods:{
             login(){
                 const user = this.utilizadors.getUsers.find(user=> user.username == this.username && user.password == this.password)
+                const Onatividade = this.atividades.getAtividade.find(Onatividade => Onatividade.colaboradore == this.username)
                 if(user) {
                     localStorage.setItem('isAuthenticated', true);
                     localStorage.setItem('userlogado', JSON.stringify(user));
+                    localStorage.setItem('atividadeon', JSON.stringify(Onatividade));
                     alert('Welcome !');
 					this.$router.push({ name: 'home' });
 				} else {
