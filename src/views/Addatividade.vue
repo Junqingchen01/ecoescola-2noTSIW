@@ -225,5 +225,5 @@
       }
     },
   };
-  // localStorage.setItem('atividades', JSON.stringify(atividades));
+
 </script>

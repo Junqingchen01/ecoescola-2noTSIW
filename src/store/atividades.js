@@ -4,7 +4,7 @@ export const atividadestore = defineStore('atividade', {
   state: () =>({
     atividades:[
       { 
-        atividade: 'Frozen Yogurt',
+        atividade: 'user ativid',
         nivel: 'A',
         descricao:'asdhlkjasjhkdl',
         diagnostico: 159,
@@ -16,7 +16,7 @@ export const atividadestore = defineStore('atividade', {
         
       },
       {
-        atividade: 'Ice cream sandwich',
+        atividade: 'admin ativi',
         nivel:'C',
         descricao:'dasdfsa',
         diagnostico: 237,

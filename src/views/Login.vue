@@ -58,14 +58,25 @@ import { atividadestore } from '../store/atividades.js'
                 const user = this.utilizadors.getUsers.find(user=> user.username == this.username && user.password == this.password)
                 const Onatividade = this.atividades.getAtividade.find(Onatividade => Onatividade.colaboradore == this.username)
                 if(user) {
-                    localStorage.setItem('isAuthenticated', true);
-                    localStorage.setItem('userlogado', JSON.stringify(user));
-                    localStorage.setItem('atividadeon', JSON.stringify(Onatividade));
-                    alert('Welcome !');
-					this.$router.push({ name: 'home' });
-				} else {
-					alert('Wrong credentials!');
+                    if(this.username === 'Admin'){
+                        localStorage.setItem('isAdmin', true);
+                        localStorage.setItem('isAuthenticated', true);
+                        localStorage.setItem('userlogado', JSON.stringify(user));
+                        localStorage.setItem('atividadeon', JSON.stringify(Onatividade));
+                        alert('Welcome !');
+                        this.$router.push({ name: 'home' });
+                    }else{
+                        localStorage.setItem('isAuthenticated', true);
+                        localStorage.setItem('userlogado', JSON.stringify(user));
+                        localStorage.setItem('atividadeon', JSON.stringify(Onatividade));
+                        alert('Welcome !');
+                        this.$router.push({ name: 'home' });
+                    }
+            
 				}
+				else{
+                    alert('Wrong credentials!');
+                }
             },
             
         }

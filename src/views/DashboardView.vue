@@ -190,11 +190,9 @@ export default {
       }
     },
     removeTask(index) {
-      const usersponto = JSON.parse(localStorage.getItem('userlogado.ponto'),JSON.stringify(usersponto));
       this.tasks.splice(index, 1);
       localStorage.setItem("tasks", JSON.stringify(this.tasks));
-      usersponto += 1;
-      alert('Ganhaste um ponto !')
+      alert('complete um tarefa ')
 
     }
   },
