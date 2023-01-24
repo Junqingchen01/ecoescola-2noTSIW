@@ -70,6 +70,7 @@
                     <v-col>
                       <div class="text-center">
                             <v-btn
+                            @click="addEvento()"
                               color="teal accent-2"
                               style="margin: 8px 8px;"
                               
@@ -106,12 +107,10 @@ export default {
         ano:'',
         titulo:''
       },
-
-
       days: Array.from({length: 31}, (_, i) => i + 1),
       months: Array.from({length:12},(_, i) => i + 1),
       years: Array.from({length: 2}, (_, i) => new Date().getFullYear() - i),
-      attributes: [
+      attributes: localStorage.getItem('attributes') || [
         {
           customData: {
             title: 'Lunch with mom.',
@@ -185,25 +184,28 @@ export default {
       ],
     };
   },
-  // methods:{
-  //   addEvento(){
-  //     const newcustoma={
-  //       dia:this.form.dia,
-  //       mes:this.form.mes,
-  //       ano:this.form.ano,
-  //       titulo:this.form.titulo,
+  methods:{
+    addEvento(){
+      const attributes = JSON.parse(localStorage.getItem('attributes'));
+      const newcustoma={
+        dia:this.form.dia,
+        mes:this.form.mes,
+        ano:this.form.ano,
+        titulo:this.form.titulo,
 
-  //         customData: {
-  //           title: 'asdasddsa',
-  //           class: 'bg-red-600 text-black',
-  //           dates: new Date(year,month,dia)
-  //         }    
-  //     };
-  //     attributes.push(newcustoma);
-  //     alert('Novo atividade ja adicionou!')
-  //     console.log(attributes)
-  //   }
-  // }
+          customData: {
+            title: this.from.titulo,
+            class: 'bg-red-600 text-black',
+            
+          },
+          dates: new Date(this.form.ano,this.form.mes,this.form.dia)   
+      };
+      attributes.push(newcustoma);
+      localStorage.setItem('attributes',SON.stringify(this.attributes))
+      alert('Novo atividade ja adicionou!')
+      console.log(attributes)
+    }
+  }
 };
 </script>
 

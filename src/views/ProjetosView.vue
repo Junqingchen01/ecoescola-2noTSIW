@@ -271,32 +271,46 @@
                       <v-card>
                         <v-card-text>
                           <v-row>
-                            <v-col cols="8">
-                              <v-text-field v-model="form.nome" @keyup.enter="addMenbro" label="Entrar o nome de membro para convidar."></v-text-field>
-                              <v-divider></v-divider>
-                              <v-divider></v-divider>
-                              <v-text-field v-model="form.cargo" @keyup.enter="addMenbro" label="Entrar cargo dele."></v-text-field>
+                            <v-col cols="12">
+                              <v-card-title class="text-center"  >
+                                <div  class="cardtitle" >
+                                  Convidar um membro ESMAD
+                                </div>  
+                              </v-card-title>
+                              <v-layout class="d-flex align-center">
+                              Nome:
+                              <v-text-field v-model="form.nome" @keyup.enter="addMenbro" ></v-text-field>
+                              </v-layout> 
+                              
+
+                              <v-layout class="d-flex align-center"> 
+                                Cargo:
+                                <v-text-field v-model="form.cargo" @keyup.enter="addMenbro"></v-text-field>
+                              </v-layout>
+                              <v-layout class="d-flex align-center"> 
+                                Email:
+                                <v-text-field  @keyup.enter="addMenbro"></v-text-field>
+                              </v-layout>
                             </v-col>
                             <v-col>
-                              <v-btn 
-                                style="margin:48px 0"
-                                color="teal accent-2" 
-                                @click="addMenbro">Adicionar
-                              </v-btn>
+                              <div class="text-center">
+                                <v-btn 
+                                  color="teal accent-2" 
+                                  @click="addMenbro">Adicionar
+                                </v-btn>
+                                
+                              </div>
                             </v-col>
                           </v-row>
 
                         </v-card-text>
-                        <v-card-actions>
-                          <v-btn color="teal accent-2" block @click="dialog = false">Close Dialog</v-btn>
-                        </v-card-actions>
                       </v-card>
                     </v-dialog>
                   </div>
             
           </v-card>
 <!-- chat -->
-          <v-card  style="margin:16px 0" v-bind:style="{ 'overflow-y': 'scroll','height':'500px' }">
+          <v-card  style="margin:16px 0" v-bind:style="{ 'overflow-y': 'scroll','height':'300px' }">
             <v-card-text>
                   <v-row>
                     <v-col v-for="message in messages" :key="message" cols="12">
@@ -323,7 +337,7 @@ export default {
   data() {
     return {
           messageText: '',
-          messages: (localStorage.getItem('messages')) || ['hellow'],
+          messages: (localStorage.getItem('messages')) || ['hellow','ola',],
           
           dialog: false,
           isAdmin:(localStorage.getItem('isAdmin')),
@@ -335,7 +349,7 @@ export default {
           descricao:'',
           datafim:'',
 
-          files: [],
+          files:(localStorage.getItem('files')) || [],
           dialog1: false,
           dialog1Data: {},
           
@@ -364,6 +378,7 @@ export default {
         this.messages.push(this.messageText)
 
         this.messageText = ''
+        localStorage.setItem("messages", JSON.stringify(this.messages));
         console.log(this.messageText)
       }
     },
@@ -389,8 +404,8 @@ export default {
       this.dialog1 = false
     },
     uploadFile() {
-      this.files.push({
-        id: this.files.length + 1,
+      if(this.dataInicio,this.grau,this.tipo,this.descricao,this.datafim){
+        this.files.push({
         title: 'Ata'+ this.files.length,
         data: this.newFileData,
 
@@ -401,7 +416,8 @@ export default {
         datafim:this.datafim,
       })
       this.newFileData = ''
-      localStorage.setItem('atas', JSON.stringify(this.atas))
+      localStorage.setItem("files", JSON.stringify(this.files));
+      }
     },
   },
   created() {
@@ -417,5 +433,8 @@ export default {
   .textcss{
     margin-top:20px;
     height: 70px;
+  }
+  .cardtitle{
+    color:#4DB6AC
   }
 </style>
