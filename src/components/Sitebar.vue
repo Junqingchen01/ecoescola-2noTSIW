@@ -8,7 +8,7 @@
         >
           <v-list >
               <v-list-item                
-              :prepend-avatar="logo" @click="$router.push({ name: 'home' })">              
+              :prepend-avatar="logo" @click="$router.push({ name: 'home' })" style="margin-left: 30%;">              
               </v-list-item>
           </v-list>  
           <v-divider></v-divider>  
@@ -16,10 +16,16 @@
 
                 <v-list-item  
                 :prepend-avatar="icon"
-                
+                style="margin-left: 35%;"
                 ></v-list-item>
                 
-                <v-list-item v-if="isAuthenticated">{{ userlogado.nome }} {{ userlogado.apelido }}<v-spacer></v-spacer>{{ userlogado.localizacao }}</v-list-item>
+                <v-list-item v-if="isAuthenticated"
+                style="margin-left: 20%;"
+                >{{ userlogado.nome }} {{ userlogado.apelido }}</v-list-item>
+
+                <v-list-item v-if="isAuthenticated"
+                style="margin-left: 30%;"
+                >{{ userlogado.localizacao }}</v-list-item>
             <v-list-item prepend-icon="mdi-folder" title="PROJETOS" value="projetos" @click="$router.push({ name: 'projetos' })"></v-list-item>
             <v-list-item prepend-icon="mdi-account" title="PERFIL" value="prefil" @click="this.$router.push({ name: 'perfil' })"></v-list-item>
             <v-list-item prepend-icon="mdi-calendar-month" title="CALENDARIO" value="calendario" @click="$router.push({ name: 'home' })"></v-list-item>
