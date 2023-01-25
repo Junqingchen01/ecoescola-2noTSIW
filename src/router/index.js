@@ -12,6 +12,7 @@ import Login from '@/views/Login.vue'
 import App from '@/App.vue';
 
 
+
 const routes = [
   {
     path: '/table',

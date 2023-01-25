@@ -46,7 +46,7 @@
                </v-card-title>
                 <v-spacer></v-spacer>
                 <v-card-text>
-                  <!-- <DoughnutChart /> -->
+                  <!-- <DoughnutChart/> -->
                 </v-card-text>
                 <v-card-text class="text-center text-h5">
                                 60%
@@ -70,7 +70,7 @@
                </v-card-title>
                 <v-spacer></v-spacer>
                 <v-card-text class="text-center text-h5 ">
-                               Agua
+                          {{userlogado.pontos}}
                 </v-card-text>
               
             </v-card>
@@ -177,6 +177,7 @@ export default {
       dialog: false,
       utilizadors:useUsersotre(),
       userlogado:JSON.parse(localStorage.getItem('userlogado')),
+      newponto:0,
 
     }
   },
@@ -186,16 +187,25 @@ export default {
         this.tasks.push(this.newTask);
         this.newTask = '';
         localStorage.setItem("tasks", JSON.stringify(this.tasks));
+        
         alert('Uma nova tarefa ja addicionar!!');
       }
     },
     removeTask(index) {
+      
       this.tasks.splice(index, 1);
       localStorage.setItem("tasks", JSON.stringify(this.tasks));
+      localStorage.setItem('newpontos',JSON.stringify(this.userlogado.pontos +=1))
+      localStorage.setItem('ganhaponto', true)
       alert('complete um tarefa ')
+      // updateUser()
 
-    }
+    },
+    // updateUser(){
+    //   utilizadors.dispatch('updateUser', { pontos: this.newponto, tarefas: this.newtarefas });
+    // }
   },
+
 }
 </script>
 <style>

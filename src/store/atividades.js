@@ -4,6 +4,7 @@ export const atividadestore = defineStore('atividade', {
   state: () =>({
     atividades:[
       { 
+        id:1,
         atividade: 'user ativid',
         nivel: 'A',
         descricao:'asdhlkjasjhkdl',
@@ -16,6 +17,7 @@ export const atividadestore = defineStore('atividade', {
         
       },
       {
+        id:2,
         atividade: 'admin ativi',
         nivel:'C',
         descricao:'dasdfsa',
@@ -28,6 +30,7 @@ export const atividadestore = defineStore('atividade', {
         
       },
       { 
+        id:3,
         atividade: 'apple',
         nivel: 'A',
         descricao:'asdhlkjasjhkdl',
@@ -41,6 +44,17 @@ export const atividadestore = defineStore('atividade', {
   getters:{
     getAtividade:(state) => state.atividades,
 
+    getAtividadeById: (state) =>
+    (id) => state.todos.find(todo => todo.id == id),
+
   
+  },
+  actions:{
+    setStatus(id){
+      const atividade = this.atividade.find(atividade =>atividade.id == id)
+      if(atividade.status =='Em progresso'){
+        atividade.status == 'Completo'
+      }
+    }
   }
   })

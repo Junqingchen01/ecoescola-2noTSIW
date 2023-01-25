@@ -27,9 +27,40 @@
         </v-navigation-drawer>
         <v-app-bar  theme="dark"  hide-on-scroll  absolute>
           <v-spacer></v-spacer>
-          <v-btn variant="text" icon="mdi-bell"  @click="$router.push({ name: 'login' })"></v-btn>
+          <div class="text-center">
+            <v-dialog
+              v-model="dialog"
+            >
+              <template v-slot:activator="{ props }">
+                <v-btn
+                  v-if="isAuthenticated"
+                  color="teal accent-2"
+                  v-bind="props"
+                  variant="text" icon="mdi-bell"
+                >
+                 
+                </v-btn>
+              </template>
 
-          <v-btn variant="text" icon="mdi-close"></v-btn> 
+              <v-card>
+                <v-card-text>
+                  <v-card>
+                    <v-card-title class="text-center" color="teal accent-2" >
+                      Notificação
+                    </v-card-title>
+
+                    <v-card-text>
+                      <h1>Tens um evento que termina em 3 dias.</h1>
+                    </v-card-text>
+                  </v-card>
+                </v-card-text>
+
+              </v-card>
+            </v-dialog>
+          </div>
+          
+
+          <v-btn variant="text" icon="mdi-close" color="teal accent-2" @click="logout"></v-btn> 
         </v-app-bar>
         
         
@@ -48,9 +79,18 @@
           icon: require('../assets/icon.png'),
           utilizadors: useUsersotre(),
             
-          userlogado:JSON.parse(localStorage.getItem('userlogado'))
- 
+          userlogado:JSON.parse(localStorage.getItem('userlogado')),
+          dialog: false,
+
         }
-      },  
+      }, 
+      methods:{
+        logout(){
+          localStorage.clear();
+          alert('Você está offline, obrigado por usar!');
+          location.reload()
+          this.$router.push({ name: 'login' });
+        }
+      } 
 }
   </script>

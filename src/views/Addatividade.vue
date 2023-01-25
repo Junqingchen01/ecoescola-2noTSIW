@@ -65,7 +65,7 @@
 
                 <v-col cols="12">
                   <v-select 
-                      :items="['Em progresso','completo']"
+                      :items="['Em progresso','Completo']"
                       label="status*"
                       v-model="form.status"
                       required
@@ -83,13 +83,13 @@
 
                 
                   <v-col cols="12" class="text-center">
-                    <h1>Menbros</h1>
+                    <h1>Membros</h1>
                   </v-col>
 
                   <v-col cols="6">
                     <v-list>
                             <v-list-item v-for="(menbro, index) in menbros" :key="index">
-                              <v-list-item-title>Nome do menbro <v-spacer></v-spacer>{{ menbro }}</v-list-item-title>
+                              <v-list-item-title>Nome do membro <v-spacer></v-spacer>{{ menbro }}</v-list-item-title>
                             </v-list-item>
                       </v-list>
                   </v-col>
@@ -112,7 +112,7 @@
                             v-bind="props"
                             
                           >
-                          Adicionar Menbro
+                          Adicionar Membro
                           </v-btn>
 
                       </template>
@@ -130,7 +130,7 @@
                               <v-btn 
                                 style="margin:48px 0"
                                 color="teal accent-2" 
-                                @click="addMenbro">Adicionar Menbro
+                                @click="addMenbro">Convida Membro
                               </v-btn>
                             </v-col>
                           </v-row>
@@ -201,27 +201,26 @@
       }
     },
       addatividade(){
-        const atividades = JSON.parse(localStorage.getItem('atividades'));
+        if(this.form.atividade,this.form.nivel,this.form.descricao,this.form.diagnostico,this.form.objetivo,this.form.meta,this.form.calendarizacao,this.form.colaboradore,this.form.status){
+          const atividades = JSON.parse(localStorage.getItem('atividades'));
 
-        const newatividade={
-            atividade: this.form.atividade,
-            nivel: this.form.nivel,
-            descricao: this.form.descricao,
-            diagnostico:  this.form.diagnostico,
-            objetivo: this.form.objetivo,
-            meta: this.form.meta,
-            calendarizacao: this.form.calendarizacao,
-            colaboradore: this.form.colaboradore,
-            status: this.form.status
+          const newatividade={
+              atividade: this.form.atividade,
+              nivel: this.form.nivel,
+              descricao: this.form.descricao,
+              diagnostico:  this.form.diagnostico,
+              objetivo: this.form.objetivo,
+              meta: this.form.meta,
+              calendarizacao: this.form.calendarizacao,
+              colaboradore: this.form.colaboradore,
+              status: this.form.status
+          };
 
-        };
-
-        atividades.push(newatividade);
-        localStorage.setItem('atividades', JSON.stringify(atividades));
-        alert('Novo atividade ja adicionou!')
-        this.$router.push({ name:'table'});
-
-        
+          atividades.push(newatividade);
+          localStorage.setItem('atividades', JSON.stringify(atividades));
+          alert('Novo atividade ja adicionou!')
+          this.$router.push({ name:'table'});
+        }
       }
     },
   };

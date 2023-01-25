@@ -13,7 +13,7 @@
                     ></v-img>
 
                     <v-card-title class="text-center">
-                    James
+                        {{ userlogado.nome }} {{ userlogado.apelido }}
                     </v-card-title>
 
                     <v-card-text class="text-center">
@@ -42,6 +42,7 @@
                                     Nome
                                 </v-card-subtitle>
                                 <v-text-field
+                                v-model="newnome"
                                  label
                                  required
                                  >
@@ -56,6 +57,7 @@
                                 <v-text-field
                                  label
                                  required
+                                 v-model="newapelido"
                                  >
                                 </v-text-field>
 
@@ -65,6 +67,7 @@
                                     E-mail
                                 </v-card-subtitle>
                                 <v-text-field
+                                v-model="newmail"
                                  label
                                  required
                                  >
@@ -77,6 +80,7 @@
                                     Contacto
                                 </v-card-subtitle>
                                 <v-text-field
+                                v-model="newcontacto"
                                  label
                                  required
                                  >
@@ -89,6 +93,7 @@
                                     Password
                                 </v-card-subtitle>
                                 <v-text-field
+                                v-model="newpassword"
                                  label
                                  required
                                  >
@@ -112,6 +117,7 @@
                                     Localização
                                 </v-card-subtitle>
                                 <v-text-field
+                                v-model="newlocal"
                                  label
                                  required
                                  >
@@ -122,7 +128,7 @@
                             
                         </v-container>
                             <v-btn 
-                            color="secondary" @click="Guardar()"
+                            color="secondary" 
                             >
                             Guardar Alterações 
                             </v-btn>
@@ -136,20 +142,41 @@
 </template>
 
 <script>
+import { useUsersotre } from '../store/utilizador.js'
+
     export default {
         data() {
             return {
-                
+                utilizadors:useUsersotre(),
+                userlogado:JSON.parse(localStorage.getItem('userlogado')),
+                newnome:'',
+                newapelido:'',
+                newmail:'',
+                newcontacto:'',
+                newpassword:'',
+                newlocal:'',
+                // updateUser(){
+
+                //     userlogado.dispatch('updateUser', { nome: this.newnome, email: this.newmail ,
+                //     apelido:this.newapelido,  contacto:this.newcontacto, password:this.newpassword, localizacao: this.newlocal});
+                // }
             }
         },
-        methods:{
-            Guardar(){
-
-
-                alert('Dados guardar com sucesso!')
-                this.$router.push({name:'perfil'})
-            }
-        }
+        // methods:{
+        //     Guardar(){
+        //         const newDados = {
+        //             nome:this.newnome,
+        //             apelido:this.newapelido,
+        //             email:this.newmail,
+        //             contacto:this.newcontacto,
+        //             pawssword:this.newpassword,
+        //             localizacao:this.newlocal,
+        //         }
+        //         this.utilizadors.Guardar(newDados)
+        //         alert('Dados guardar com sucesso!')
+        //         this.$router.push({name:'perfil'})
+        //     }
+        // }
     }
 </script>
 

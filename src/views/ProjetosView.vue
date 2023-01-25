@@ -265,7 +265,7 @@
                         color="teal accent-2"
                           v-bind="props"
                         >
-                        Adicionar Menbro
+                        Adicionar Membro
                         </v-btn>
                       </template>
                       <v-card>
@@ -330,8 +330,8 @@
       </v-row>
     </v-container>
 </template>
-
 <script>
+import {useUsersotre} from'../store/utilizador.js'
 
 export default {
   data() {
@@ -353,6 +353,8 @@ export default {
           dialog1: false,
           dialog1Data: {},
           
+          users: useUsersotre(),
+
           form:{
             nome:'',
             cargo:'',
@@ -383,6 +385,7 @@ export default {
       }
     },
     addMenbro() {
+      
         if(this.form.nome, this.form.cargo){
           const Membros = JSON.parse(localStorage.getItem('Membros'));
         const newMembro ={

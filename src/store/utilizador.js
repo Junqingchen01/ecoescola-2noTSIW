@@ -4,7 +4,6 @@ export const useUsersotre = defineStore('utilizador', {
   state: () =>({ 
     utilizadors:[
       { 
-
         nome:"Joao",
         apelido:'Rocha',
         username:'User',
@@ -14,6 +13,7 @@ export const useUsersotre = defineStore('utilizador', {
         localizacao:'Esmad',
         pontos:1,
         tarefas:0,
+        cargo:'professor',
       },
       {
         nome:'admin',
@@ -25,6 +25,7 @@ export const useUsersotre = defineStore('utilizador', {
         localizacao:'Esmad',
         pontos:11,
         tarefas:10,
+        cargo:'admin1',
       },
       {
         nome:'abc',
@@ -34,6 +35,7 @@ export const useUsersotre = defineStore('utilizador', {
         contacto:'123456789',
         password:'abc',
         localizacao:'aaaac',
+        cargo:'studant'
       },
     ],
   }),
@@ -46,6 +48,30 @@ export const useUsersotre = defineStore('utilizador', {
     isAuthenticated:(state) =>state.userlogado,
 
   },
+  actions:{
+    // Guardar(newDados){
+    //   const user = this.utilizadors.find(user=> user.username == this.username)
+
+    //   this.user.set({
+    //     nome:newDados.nome,
+    //     apelido:newDados.apelido,
+    //     email:newDados.email,
+    //     contacto:newDados.contacto,
+    //     password:newDados.password,
+    //     localizacao:newDados.localizacao,
+    //   })
+
+    // },
+    updateUser(context,payload){
+      context.commit('updateUser',payload);
+    }
+  },
+  mutations: {
+    updateUser(state, payload) {
+      state.utilizadors.pontos = payload.pontos;
+      state.utilizadors.tarefas = payload.tarefas;
+    }
+  }
   
 })
 

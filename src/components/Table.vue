@@ -85,6 +85,8 @@
                   <td>{{ item.calendarizacao }}</td>
                   <td>{{ item.colaboradore }}</td>
                   <td>
+                  <!-- <v-btn v-if="atividade.colaboradore = userlogado"  @click="atividade.setStatus(atividade.colaboradore)"></v-btn> -->
+                  <v-spacer></v-spacer>
                   {{ item.status }}
                   </td>
                   
@@ -108,50 +110,54 @@
 
 <script>
 import { useUsersotre } from '../store/utilizador.js'
+import  {atividadestore} from '../store/atividades.js'
 
   export default {
     data () {
       return {
         utilizadors:useUsersotre(),
         userlogado:JSON.parse(localStorage.getItem('userlogado')),
+        atividade:atividadestore(),
+        
 
-        atividades: [
-          { 
-            atividade: 'Frozen Yogurt',
-            nivel: 'A',
-            descricao:'asdhlkjasjhkdl',
-            diagnostico: 159,
-            objetivo:'fly',
-            meta:'11',
-            calendarizacao:'1',
-            colaboradore:'User',
-            status:'Em progresso',
-            
-          },
-          {
-            atividade: 'Ice cream sandwich',
-            nivel:'C',
-            descricao:'dasdfsa',
-            diagnostico: 237,
-            objetivo:'flly',
-            meta:'22',
-            calendarizacao:'1',
-            colaboradore:'Admin',
-            status:'Em progresso',
-            
-          },
-          { 
-            atividade: 'apple',
-            nivel: 'A',
-            descricao:'asdhlkjasjhkdl',
-            diagnostico: 159,
-            objetivo:'fly',
-            meta:'11',
-            calendarizacao:'1',
-          },
-         
-          
-        ],
+        atividades:[
+      { 
+        id:1,
+        atividade: 'user ativid',
+        nivel: 'A',
+        descricao:'asdhlkjasjhkdl',
+        diagnostico: 159,
+        objetivo:'fly',
+        meta:'11',
+        calendarizacao:'1',
+        colaboradore:'User',
+        status:'Em progresso',
+        
+      },
+      {
+        id:2,
+        atividade: 'admin ativi',
+        nivel:'C',
+        descricao:'dasdfsa',
+        diagnostico: 237,
+        objetivo:'flly',
+        meta:'22',
+        calendarizacao:'1',
+        colaboradore:'Admin',
+        status:'Em progresso',
+        
+      },
+      { 
+        id:3,
+        atividade: 'apple',
+        nivel: 'A',
+        descricao:'asdhlkjasjhkdl',
+        diagnostico: 159,
+        objetivo:'fly',
+        meta:'11',
+        calendarizacao:'1',
+      },
+    ],
       }
     },
     created() {

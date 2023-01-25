@@ -122,13 +122,13 @@
                             height="100"
                             style="margin-top: 47px;"
                         >
-                            <v-card-title class="text-center">
+                            <v-card-title class="text-center" >
+                        
                                 Pontos ja ganhos
                             </v-card-title>
 
                             <v-card-subtitle class="text-center">
-                                <div>{{userlogado.pontos}}</div>
-                                
+                                <div>{{newpontos}}</div>
                             </v-card-subtitle>
 
                     </v-card>
@@ -157,14 +157,10 @@
                                 Progresso total
                                              
                             </v-card-title>
-                            <v-card-text>
-                                
-                            </v-card-text>
-                    
-                    </v-card>
-                    
+                            <v-card-text>                             
+                            </v-card-text>                  
+                    </v-card>                    
                 </v-col>
- 
           </v-row>
     </v-container>
 </template>
@@ -181,6 +177,9 @@ import { useUsersotre } from '../store/utilizador.js'
                 utilizadors:useUsersotre(),
                 userlogado:JSON.parse(localStorage.getItem('userlogado')),
                 ATprogresso:JSON.parse(localStorage.getItem('atividadeon')),
+                
+                ganhaponto:JSON.parse(localStorage.getItem('ganhaponto')),
+                newpontos:JSON.parse(localStorage.getItem('newpontos'))
                 
             };
          },

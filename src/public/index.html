@@ -294,7 +294,7 @@
 </head>
 <body>
 
-        <button class="loginBtn"> Login</button>
+        <button class="loginBtn" v-on:click="login"> Login</button>
         <img src="Group 20.png" id="biglogo">
         <h1 class="titulo">Coordenação</h1>
         <div class="main">
@@ -316,7 +316,7 @@
             <h1 class="textreta1">Coordena o teu 
                 projeto Gratuitamente</h1>
             <h1 class="textreta2">Entenda facilmente como gerir os seus projetos.</h1>   
-            <button class="lastbtn">Junte-se a nós!</button> 
+            <button class="lastbtn" v-on:click="login" >Junte-se a nós!</button> 
 
             <h1 class="sobre">Sobre</h1>
             <h1 class="projeto">Projeto</h1>
@@ -324,5 +324,15 @@
             <h1 class="contacto">Contacto</h1>
             <img src="Group 20.png" class="lastlogo">
         </div>
+
+        <script>
+            export default {
+                methods: {
+                    login() {
+                    this.$router.push({ path: '/login' });
+                    },
+                },
+                }
+        </script>
 </body>
 </html>
